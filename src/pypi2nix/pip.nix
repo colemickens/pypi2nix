@@ -43,6 +43,7 @@ let
 
   scriptRequires = pkgs.lib.optionalString ((builtins.length setup_requires) > 0) ''
       mkdir -p ${project_dir}/setup_requires
+    export SOURCE_DATE_EPOCH=315532800
 
       echo ""
       echo "==================================================================="
