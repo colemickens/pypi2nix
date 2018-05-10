@@ -42,6 +42,7 @@ let
     '';
 
   scriptRequires = pkgs.lib.optionalString ((builtins.length setup_requires) > 0) ''
+    export SOURCE_DATE_EPOCH=315532800
       mkdir -p ${project_dir}/setup_requires
 
       echo ""
@@ -141,6 +142,7 @@ in pkgs.stdenv.mkDerivation rec {
     echo "create wheels from source distributions without going online"
     echo "==================================================================="
     echo ""
+    set -x
     PYTHONPATH=${pypi2nix_bootstrap}/extra:${project_dir}/setup_requires:$PYTHONPATH \
       ${extra_env} pip wheel \
         ${builtins.concatStringsSep " " (map (x: "-r ${x} ") requirements_files)} \
@@ -153,6 +155,7 @@ in pkgs.stdenv.mkDerivation rec {
         --no-index
 
     RETVAL=$?
+    set +x
     [ $RETVAL -ne 0 ] && exit $RETVAL
 
     pushd ${project_dir}/wheelhouse

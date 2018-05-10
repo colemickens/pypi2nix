@@ -3,14 +3,14 @@
 
 rec {
 
-  pipVersion = "9.0.1";
+  pipVersion = "10.0.1";
   pipWhl = fetchurl {
-    url = "https://pypi.python.org/packages/b6/ac/7015eb97dc749283ffdec1c3a88ddb8ae03b8fad0f0e611408f196358da3/pip-9.0.1-py2.py3-none-any.whl";
-    sha256 = "1c7g5xa1yhj0bxbdynxpl9g5mcag0fzd1mc9q01w6q4418n7c2v9";
+    url = "https://files.pythonhosted.org/packages/0f/74/ecd13431bcc456ed390b44c8a6e917c1820365cbebcb6a8974d1cd045ab4/pip-10.0.1-py2.py3-none-any.whl";
+    sha256 = "1myn4l746ay6wryx7s2647s0b5dm8ikp94rs8c4q9gik53xxyz3i";
   };
   pip = fetchurl {
-    url = "https://pypi.python.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz";
-    sha256 = "03clr9c1dih5n9c00c592zzvf6r1ffimywkaq9agcqdllzhl7wh9";
+    url = "https://files.pythonhosted.org/packages/ae/e8/2340d46ecadb1692a1e455f13f75e596d4eab3d11a57446f08259dee8f02/pip-10.0.1.tar.gz";
+    sha256 = "0s7fszdky82jknyv6bjq0skkniwz57pnzbzy301f21hvrph0iggj";
   };
 
   setuptoolsVersion = "39.1.0";
